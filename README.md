@@ -1,104 +1,112 @@
-Aqui está um **README.md** completo, organizado e profissional para o seu desafio:
+Aqui está o **README.md** revisado, organizado e atualizado **incluindo as instruções corretas após remover `bin/` e `obj/`** e deixando ele pronto para o seu repositório GitHub.
+
+Se quiser, posso também já commitar ele direto no padrão do GitHub.
 
 ---
 
-# Desafios em C# – Console App
+# 🧩 Desafios em C# – Console Application
 
-Aplicação criada para resolver três desafios propostos: **Comissão de Vendas**, **Movimentação de Estoque** e **Cálculo de Juros por Atraso**.
-Todo o projeto foi estruturado em um único arquivo `Program.cs` (para propósito de desafio), com leitura de arquivos JSON externos.
+Aplicação de console criada para resolver três desafios práticos envolvendo:
+**cálculo de comissão de vendas**, **movimentação de estoque** e **cálculo de juros por atraso**.
+
+Todo o código foi desenvolvido em **C# (.NET)**, utilizando leitura de dados via JSON externo para manter a estrutura organizada.
 
 ---
 
-## 📌 **Funcionalidades**
+## Funcionalidades
 
 ### **1️⃣ Comissão de Vendas**
 
-- Lê um arquivo `vendas.json`
-- Calcula comissão por vendedor:
+* Lê o arquivo `vendas.json`
+* Calcula comissão por venda:
 
-  - Vendas ≥ 500 → **5%**
-  - Vendas ≥ 100 → **1%**
-  - Abaixo disso → **0%**
-
-- Exibe a comissão total por vendedor.
-
-### **2️⃣ Movimentação de Estoque**
-
-- Lê um arquivo `estoque.json`
-- Permite procurar produto pelo código
-- Registra movimentação:
-
-  - Entrada (quantidade positiva)
-  - Saída (quantidade negativa)
-
-- Atualiza o estoque e mostra o novo valor final
-- Gera um ID aleatório para a movimentação
-
-### **3️⃣ Cálculo de Juros**
-
-- Recebe:
-
-  - Valor
-  - Data de vencimento
-
-- Se houver atraso:
-
-  - Calcula dias de atraso
-  - Aplica multa:
-    **2,5% ao dia** (`valor * 0.025 * dias`)
-
-- Exibe:
-
-  - Dias atrasados
-  - Multa total
-  - Valor final
+  * **≥ R$ 500** → 5%
+  * **≥ R$ 100** → 1%
+  * **< R$ 100** → sem comissão
+* Soma o total por vendedor
+* Exibe o relatório final
 
 ---
 
-## **Arquivos Necessários**
+### **2️⃣ Movimentação de Estoque**
 
-Certifique-se de que os arquivos JSON estejam na mesma pasta que o executável ou o projeto:
+* Lê o arquivo `estoque.json`
+* Solicita:
 
-### **vendas.json**
+  * Código do produto
+  * Descrição da movimentação
+  * Quantidade (positiva = entrada / negativa = saída)
+* Gera um ID aleatório para a movimentação
+* Atualiza o estoque e mostra o novo valor final
+
+---
+
+### **3️⃣ Cálculo de Juros por Atraso**
+
+* Solicita:
+
+  * Valor original
+  * Data de vencimento
+* Calcula atraso baseado na data atual
+* Aplica multa:
+
+  * **2,5% ao dia**
+* Exibe:
+
+  * Dias em atraso
+  * Multa total
+  * Valor final atualizado
+
+---
+
+## Arquivos Necessários
+
+Esses arquivos **devem estar na raiz do projeto**:
+
+### vendas.json
 
 ```json
 {
   "vendas": [
-    { "vendedor": "Maria", "valor": 600 },
-    { "vendedor": "João", "valor": 200 },
-    { "vendedor": "Pedro", "valor": 50 }
+    { "vendedor": "João Silva", "valor": 1200.50 }
   ]
 }
 ```
 
-### **estoque.json**
+### estoque.json
 
 ```json
 {
   "estoque": [
-    { "codigoProduto": 1, "descricaoProduto": "Teclado", "estoque": 20 },
-    { "codigoProduto": 2, "descricaoProduto": "Mouse", "estoque": 35 }
+    { "codigoProduto": 101, "descricaoProduto": "Caneta Azul", "estoque": 150 }
   ]
 }
 ```
 
 ---
 
-## ▶️ **Como Executar o Projeto**
+# Como Executar o Projeto
 
-1. Entre no diretório do projeto:
+Após clonar o repositório:
 
 ```bash
-cd /caminho/para/seu/projeto
+git clone https://github.com/Quelmy/Desafio-Comissao-de-Vendas.git
+cd Desafio-Comissao-de-Vendas
 ```
 
-2. Execute:
+### **1. Restaure o projeto**
+
+```bash
+dotnet restore
+```
+
+### **2. Execute**
 
 ```bash
 dotnet run
 ```
 
-3. O menu será exibido no terminal:
+O menu aparecerá assim:
 
 ```
 ===== MENU DE DESAFIOS =====
@@ -110,28 +118,30 @@ dotnet run
 
 ---
 
-## **Estrutura Interna**
+# Estrutura do Projeto
 
-O projeto contém:
-
-- Classes de modelo (Venda, Produto, Movimentação…)
-- Leitura e desserialização de JSON
-- Menu interativo
-- Três desafios independentes
-- Controle do fluxo com loops e `switch`
-
-Tudo em um único arquivo para atender aos requisitos do desafio.
-
----
-
-## **Tecnologias Utilizadas**
-
-- **C# 9 / .NET 9**
-- **System.Text.Json** para leitura JSON
-- Aplicação **Console**
+```
+/Desafio-Comissao-de-Vendas
+│
+├── Program.cs
+├── vendas.json
+├── estoque.json
+├── README.md
+└── .gitignore
+```
 
 ---
 
-## 🧠 **Autor**
+#  Tecnologias Utilizadas
 
-Desenvolvido por **Riquelmy Ferreira** como solução para um desafio prático.
+* **C# / .NET**
+* **System.Text.Json**
+* Console Application
+
+---
+
+# 👤 Autor
+
+Projeto desenvolvido por **Riquelmy Ferreira** como desafio prático de programação em C#.
+
+---
